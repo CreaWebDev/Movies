@@ -1,0 +1,49 @@
+#details-page {
+    font-family: 'JetBrains Mono', monospace;
+
+    input {
+        width: 100%;
+    }
+    .container-sm.details{
+        border: 1px solid black;
+        background-color: var(--dark-color);
+        padding: 50px;
+        box-shadow: 4px 4px 9px;
+
+        @media (max-width: 768px) {
+            max-width: 90%;
+        }
+
+        @media (min-width: 768px) {
+            max-width: 50%;
+        }
+
+        @media (min-width: 1440px) {
+            max-width: 40%;
+        }
+        
+        h5 {
+            color: var(--accent-color);
+        }
+    }
+
+    p {
+        color: white;
+        padding-top: 5px;
+    }
+    
+    div.buttons {
+            @include flexRow(center, flex-start);
+
+            button.btn.action-button {
+                color: white;
+                background-color: var(--accent-color);
+                margin-right: 20px;
+            }
+            
+            button.btn.cancel-button {
+                background-color: var(--tinted-color);
+                color: white;
+            }
+        }
+}   

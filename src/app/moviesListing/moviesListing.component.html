@@ -1,0 +1,64 @@
+<div class="container-md" id="listing">
+
+  <div id="create-btn-holder">
+    <main id="add-button-holder">
+      <button type="link" (click)="openCreateModal()" class="btn btn-link">
+        <i class="far fa-plus-square"></i>
+      </button>
+    </main>
+  </div>
+  
+  <div class="container">
+
+    <div class="input-group mb-3">
+      <input type="text" [(ngModel)]="searchTerm"
+             name="searchTerm" placeholder="Search">
+    </div>
+
+    <table class="table table-light table-bordered table-sm table-hover table-responsive align-middle" id="movies-table">
+      
+      <!-- TABLE HEAD -->
+      <thead class="thead-dark">
+
+        <tr>
+          <th  class=" py-3 px-lg-3"><h4>TITLE</h4></th>
+          <th  class=" py-3 px-lg-3"><h4>ID</h4></th>
+          <th  class=" py-3 px-lg-3"><h4>YEAR</h4></th>
+          <th  class=" py-3 px-lg-3"><h4>GENRE</h4></th>
+          <th  class=" py-3 px-lg-3"><h4>ACTORS</h4></th>
+          <th  class=" py-3 px-lg-3"><h4>MODIFY</h4></th>
+          <th  class=" py-3 px-lg-3"><h4>DELETE</h4></th>
+        </tr>
+
+      </thead>
+
+      <!-- TABLE BODY -->
+      <tbody>
+
+        <tr *ngFor="let movie of movies | filter:searchTerm, 
+            index as id" [routerLink]="['/details', movie.id ]">
+          
+          <th class=" py-3 px-lg-3"><p>{{ movie.Title }}</p></th>
+          <td class=" py-3 px-lg-3"><p>{{ movie.id }}</p></td>
+          <td class=" py-3 px-lg-3"><p>{{ movie.Year }}</p></td>
+          <td class=" py-3 px-lg-3"><p>{{ movie.Genre }}</p></td>
+          <td class=" py-3 px-lg-3"><p>{{ movie.Actors }}</p></td>
+          <td class=" py-3 px-lg-3">
+            <div type="link" [routerLink]="['/details', movie.id ]" class="btn-link">
+              <i class="fas fa-tools"></i>
+            </div>
+          </td>
+          <td scope="col" class="py-3 px-lg-3">
+            <div (click)="delete(movie)" class="btn-link">
+              <i class="fas fa-trash-alt"></i>
+            </div>
+          </td>
+
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+  
+</div>

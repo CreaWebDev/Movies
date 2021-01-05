@@ -1,0 +1,70 @@
+<div id="modal-content-wrapper">
+    <div class="container-sm">
+
+        <button class="close" (click)="closeModal()">
+            <span>&times;</span>
+        </button>
+               
+        <header id="modal-header">
+            <h1 id="modal-title">{{ modalData.title }}</h1>
+        </header>
+        
+        <section id="modal-body" >
+            <mat-dialog-content [formGroup]="form">
+                
+                <mat-form-field>
+                    <mat-label>Id</mat-label>
+                    <input matInput formControlName="ID" ([ngModel])="modalData.ID"/>
+                </mat-form-field>
+        
+                <mat-form-field>
+                    <mat-label>Referenceno.</mat-label>
+                    <input matInput formControlName="No" ([ngModel])="modalData.No" />
+                </mat-form-field>
+        
+                <mat-form-field>
+                    <mat-label>Title</mat-label>
+                    <input matInput formControlName="Title" ([ngModel])="modalData.Title" />
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Year</mat-label>
+                    <input matInput formControlName="Year" ([ngModel])="modalData.Year" />
+                </mat-form-field>
+        
+                <mat-form-field>
+                    <mat-label>Genre</mat-label>
+                    <mat-select matInput formControlName="Genre" ([ngModel])="modalData.Genre">
+                        <mat-option *ngFor="let type of typesOfGenre" [value]="type.value" >
+                            {{ type.viewValue }}
+                        </mat-option>                    
+                    </mat-select>
+                </mat-form-field>
+        
+                <mat-form-field>
+                    <mat-label>Actors</mat-label>
+                    <input matInput formControlName="Actors" ([ngModel])="modalData.Actors"/>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Plot</mat-label>
+                    <input matInput formControlName="Plot" ([ngModel])="modalData.Plot"/>
+                </mat-form-field>
+        
+            </mat-dialog-content>
+        </section>
+        
+        <footer id="modal-footer" mat-dialog-actions>
+
+            <button mat-raised-button id="modal-action-button" [disabled]="form.invalid" (click)="actionFunction(modalData)">
+                {{ modalData.actionButtonText }}
+            </button>
+
+            <button mat-raised-button id="modal-cancel-button" (click)="closeModal()">
+                GO BACK
+            </button>
+
+        </footer>
+        
+    </div>
+</div>

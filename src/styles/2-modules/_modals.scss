@@ -1,0 +1,44 @@
+#modal-content-wrapper {
+    width: 100%;
+
+    button.close span {
+        color: var(--tinted-color);
+        font-size: 28px;
+        padding: 0 5px;
+        border: 0px;
+    }
+    
+    .mat-form-field {
+        font-size: 14px;
+        width: 100%;
+        padding: 0 5px;
+    }
+
+    .mat-input-element {
+        caret-color: red;
+    }
+
+    mat-label {
+        color: var(--medium-gray-color);
+    }
+    
+    /* Buttons */@at-root
+    #modal-footer {
+        padding-bottom: 20px;
+    
+        #modal-action-button {
+            background-color: var(--accent-color);
+        }
+    
+        #modal-cancel-button {
+            background-color:var(--tinted-color);
+        }
+    }
+    
+    
+    #modal-title {
+        color: var(--accent-color);
+        padding-bottom: 20px;
+    }
+}
+

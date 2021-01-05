@@ -1,1 +1,277 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  background-color: var(--light-color);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.navbar.navbar-dark.bg-dark {
+  background-image: url("./images/cinema-banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0 40px;
+  height: 120px;
+  text-align: center;
+}
+
+.navbar.navbar-dark.bg-dark #home-button-holder {
+  border: none;
+  left: 50px;
+}
+
+#site-title {
+  text-align: center;
+  margin: 30px 0;
+}
+
+#site-title h1.site-title {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 2px;
+  color: var(--dark-color);
+}
+
+.site-footer {
+  width: 100%;
+  height: 300px;
+  background-image: url("./images/seats.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  bottom: 0px;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  color: white;
+  z-index: 999;
+}
+
+button:hover {
+  opacity: 0.4;
+}
+
+.close {
+  width: 20px;
+  height: auto;
+}
+
+i {
+  font-size: 20px;
+  padding-top: 5px;
+  color: var(--accent-color);
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  -webkit-transition: -webkit-transform 0.5 linear;
+  transition: -webkit-transform 0.5 linear;
+  transition: transform 0.5 linear;
+  transition: transform 0.5 linear, -webkit-transform 0.5 linear;
+}
+
+i:hover {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+  opacity: 0.4;
+}
+
+i.fa-home {
+  color: var(--tinted-color);
+  font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  i.fa-home {
+    font-size: 30px;
+  }
+}
+
+i.fa-plus-square {
+  font-size: 30px;
+  z-index: 999;
+}
+
+@media (min-width: 768px) {
+  i.fa-plus-square {
+    font-size: 50px;
+  }
+}
+
+#listing #movies-table {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+#listing #movies-table.table th h4 {
+  font-family: 'JetBrains Mono', monospace;
+  margin: 0 0 0;
+  font-size: 14px;
+}
+
+#listing #movies-table.table tbody tr td img {
+  max-height: 60px;
+}
+
+#listing #add-button-holder {
+  border: none;
+  position: fixed;
+  top: 35px;
+  right: 10px;
+}
+
+@media (min-width: 768px) {
+  #listing #add-button-holder {
+    top: 20px;
+    right: 60px;
+  }
+}
+
+#details-page {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+#details-page input {
+  width: 100%;
+}
+
+#details-page .container-sm.details {
+  border: 1px solid black;
+  background-color: var(--dark-color);
+  padding: 50px;
+  -webkit-box-shadow: 4px 4px 9px;
+          box-shadow: 4px 4px 9px;
+}
+
+@media (max-width: 768px) {
+  #details-page .container-sm.details {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 768px) {
+  #details-page .container-sm.details {
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 1440px) {
+  #details-page .container-sm.details {
+    max-width: 40%;
+  }
+}
+
+#details-page .container-sm.details h5 {
+  color: var(--accent-color);
+}
+
+#details-page p {
+  color: white;
+  padding-top: 5px;
+}
+
+#details-page div.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+#details-page div.buttons button.btn.action-button {
+  color: white;
+  background-color: var(--accent-color);
+  margin-right: 20px;
+}
+
+#details-page div.buttons button.btn.cancel-button {
+  background-color: var(--tinted-color);
+  color: white;
+}
+
+#popcornContainer {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: none;
+}
+
+.popcorn {
+  position: fixed;
+  background-image: url("images/popcorn.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  z-index: 1000;
+  pointer-events: none;
+  width: 50px;
+  height: 50px;
+}
+
+#modal-content-wrapper {
+  width: 100%;
+  /* Buttons */
+}
+
+#modal-content-wrapper button.close span {
+  color: var(--tinted-color);
+  font-size: 28px;
+  padding: 0 5px;
+  border: 0px;
+}
+
+#modal-content-wrapper .mat-form-field {
+  font-size: 14px;
+  width: 100%;
+  padding: 0 5px;
+}
+
+#modal-content-wrapper .mat-input-element {
+  caret-color: red;
+}
+
+#modal-content-wrapper mat-label {
+  color: var(--medium-gray-color);
+}
+
+#modal-footer {
+  padding-bottom: 20px;
+}
+
+#modal-footer #modal-action-button {
+  background-color: var(--accent-color);
+}
+
+#modal-footer #modal-cancel-button {
+  background-color: var(--tinted-color);
+}
+
+#modal-content-wrapper #modal-title {
+  color: var(--accent-color);
+  padding-bottom: 20px;
+}
+
+:root {
+  --main-bg-color: #9f9f8c;
+  --dark-color: #343a40;
+  --light-color: lightgray;
+  --text-color: black;
+  --accent-color: red;
+  --tinted-color: olive;
+}
+/*# sourceMappingURL=styles.css.map */

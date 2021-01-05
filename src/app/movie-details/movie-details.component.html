@@ -1,0 +1,51 @@
+<div id="details-page">
+  
+  <div class="container-sm details" *ngIf="movie">
+      
+      <!-- left column -->
+      <div id="left-col">
+        <h5>{{ title }}</h5><br>
+      
+        <div role="gridcell" class="cell">
+           <p>Reference</p>
+            <input [(ngModel)]="movie.No" placeholder="movie.No">
+          </div><br>
+
+          <div role="gridcell" class="cell">
+            <p>id</p>
+             <input [(ngModel)]="movie.id" placeholder="movie.id">
+           </div><br>
+
+          <div role="gridcell" class="cell">
+            <p>Title</p>
+            <input [(ngModel)]="movie.Title" placeholder="movie.Title">
+          </div><br>
+
+          <div role="gridcell" class="cell">
+            <p>Year</p>
+            <input [(ngModel)]="movie.Year" placeholder="movie.Year">
+          </div><br>
+
+          <div role="gridcell" class="cell">
+            <p>Genre</p>
+            <input [(ngModel)]="movie.Genre" placeholder="movie.Genre">
+          </div><br>
+
+          <div role="gridcell" class="cell">
+            <p>Actors</p>
+            <input [(ngModel)]="movie.Actors" placeholder="movie.Actors">
+          </div><br>
+
+          <div role="gridcell" class="cell">
+            <p>Plot</p>
+            <input [(ngModel)]="movie.Plot" placeholder="movie.Plot">
+          </div><br>
+
+            <div class="buttons">
+                <button type="button" (click)= save(movie) class="btn action-button">GEM</button>
+                <button type="button" [routerLink]="['/']" class="btn cancel-button">FORTRYD</button>
+            </div>
+      
+      </div>
+
+</div>
